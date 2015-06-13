@@ -1,0 +1,23 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: jrnl
+scopeName: source.txt
+fileTypes: []
+uuid: 59025533-e57b-4d5e-a1e2-0b432efacec3
+
+patterns:
+- comment: Sequences like \$, \> and \<
+  name: constant.character.escape.ssraw
+  match: \\[$<>]
+
+- comment: Tags
+  name: markup.bold
+  match: '(^|\s)@(\w+)'
+
+- comment: Date
+  name: markup.italic
+  match: '([0-9]+)-([0-9]+)-([0-9]+)'
+
+- comment: Time
+  name: markup.list
+  match: '([0-9]+):([0-9]+)'

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array/>
+	<key>name</key>
+	<string>jrnl</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Sequences like \$, \&gt; and \&lt;</string>
+			<key>match</key>
+			<string>\\[$&lt;&gt;]</string>
+			<key>name</key>
+			<string>constant.character.escape.ssraw</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Tags</string>
+			<key>match</key>
+			<string>(^|\s)@(\w+)</string>
+			<key>name</key>
+			<string>markup.bold</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Date</string>
+			<key>match</key>
+			<string>([0-9]+)-([0-9]+)-([0-9]+)</string>
+			<key>name</key>
+			<string>markup.italic</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Time</string>
+			<key>match</key>
+			<string>([0-9]+):([0-9]+)</string>
+			<key>name</key>
+			<string>markup.list</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.txt</string>
+	<key>uuid</key>
+	<string>59025533-e57b-4d5e-a1e2-0b432efacec3</string>
+</dict>
+</plist>

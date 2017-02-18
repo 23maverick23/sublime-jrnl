@@ -42,12 +42,12 @@ class JrnlListCommand(sublime_plugin.ApplicationCommand):
 
     def run(self):
         window = sublime.active_window()
-        self.file_list = [];   
+        self.file_list = [];
         config = load_and_fix_json(get_config_path())
         if config:
             for j in config['journals']:
 
-                if type(config['journals'][j]) is dict: 
+                if type(config['journals'][j]) is dict:
                     path = config['journals'][j]['journal']
                 else:
                     path = os.path.expanduser(config['journals'][j])
@@ -55,7 +55,7 @@ class JrnlListCommand(sublime_plugin.ApplicationCommand):
                 self.file_list.append([j,path, modified_str])
 
             self.file_list.sort(key=lambda item:  os.path.getmtime(item[1]), reverse=True)
-       
+
         window.show_quick_panel( self.file_list, self.open_jrnl)
 
     def open_jrnl(self, index):
@@ -77,8 +77,8 @@ class JrnlOpenCommand(sublime_plugin.ApplicationCommand):
             if view.is_loading():
                 sublime.set_timeout_async(set_syntax, 0.1)
             else:
-                view.set_syntax_file("Packages/sublime-jrnl/jrnl.tmLanguage")
+                view.set_syntax_file("Packages/jrnl/jrnl.tmLanguage")
         set_syntax()
         view.set_read_only(True)
-        
-        
+
+
